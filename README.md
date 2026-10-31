@@ -1,4 +1,4 @@
-# Fish Weight Prediction & ML Lab 
+# Fish Weight Prediction & ML Lab   
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.2%2B-orange.svg)](https://scikit-learn.org/)
@@ -11,7 +11,7 @@ A complete, production-grade machine learning project and interactive web applic
 
 ***
 
-## Acknowledgments & Attribution
+## Acknowledgments & Attribution 
 
 This project is developed using the dataset and machine learning project structure inspired by **[YBI Foundation](https://github.com/YBI-Foundation)**.
 - **YBI Foundation Dataset Repository**: [https://github.com/YBI-Foundation/Dataset](https://github.com/YBI-Foundation/Dataset)
