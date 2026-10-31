@@ -1,4 +1,4 @@
-# Fish Weight Prediction & ML Lab
+# Fish Weight Prediction & ML Lab 
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.2%2B-orange.svg)](https://scikit-learn.org/)
