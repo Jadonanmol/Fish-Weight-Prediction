@@ -1,0 +1,423 @@
+{
+  "total_records": 158,
+  "species_list": [
+    "Bream",
+    "Parkki",
+    "Perch",
+    "Pike",
+    "Roach",
+    "Smelt",
+    "Whitefish"
+  ],
+  "species_counts": {
+    "Perch": 56,
+    "Bream": 35,
+    "Roach": 19,
+    "Pike": 17,
+    "Smelt": 14,
+    "Parkki": 11,
+    "Whitefish": 6
+  },
+  "overall_stats": {
+    "Weight": {
+      "mean": 400.85,
+      "std": 357.7,
+      "min": 5.9,
+      "25%": 121.25,
+      "50%": 281.5,
+      "75%": 650.0,
+      "max": 1650.0
+    },
+    "Length1": {
+      "mean": 26.29,
+      "std": 10.01,
+      "min": 7.5,
+      "25%": 19.15,
+      "50%": 25.3,
+      "75%": 32.7,
+      "max": 59.0
+    },
+    "Length2": {
+      "mean": 28.47,
+      "std": 10.73,
+      "min": 8.4,
+      "25%": 21.0,
+      "50%": 27.4,
+      "75%": 35.75,
+      "max": 63.4
+    },
+    "Length3": {
+      "mean": 31.28,
+      "std": 11.63,
+      "min": 8.8,
+      "25%": 23.2,
+      "50%": 29.7,
+      "75%": 39.68,
+      "max": 68.0
+    },
+    "Height": {
+      "mean": 8.99,
+      "std": 4.3,
+      "min": 1.73,
+      "25%": 5.94,
+      "50%": 7.79,
+      "75%": 12.37,
+      "max": 18.96
+    },
+    "Width": {
+      "mean": 4.42,
+      "std": 1.69,
+      "min": 1.05,
+      "25%": 3.4,
+      "50%": 4.28,
+      "75%": 5.59,
+      "max": 8.14
+    }
+  },
+  "species_stats": {
+    "Bream": {
+      "count": 35,
+      "weight": {
+        "mean": 617.83,
+        "median": 610.0,
+        "min": 242.0,
+        "max": 1000.0,
+        "std": 209.21
+      },
+      "dimensions": {
+        "Length1": {
+          "mean": 30.31,
+          "min": 23.2,
+          "max": 38.0,
+          "std": 3.59
+        },
+        "Length2": {
+          "mean": 33.11,
+          "min": 25.4,
+          "max": 41.0,
+          "std": 3.91
+        },
+        "Length3": {
+          "mean": 38.35,
+          "min": 30.0,
+          "max": 46.5,
+          "std": 4.16
+        },
+        "Height": {
+          "mean": 15.18,
+          "min": 11.52,
+          "max": 18.96,
+          "std": 1.96
+        },
+        "Width": {
+          "mean": 5.43,
+          "min": 4.02,
+          "max": 6.75,
+          "std": 0.72
+        }
+      }
+    },
+    "Parkki": {
+      "count": 11,
+      "weight": {
+        "mean": 154.82,
+        "median": 145.0,
+        "min": 55.0,
+        "max": 300.0,
+        "std": 78.76
+      },
+      "dimensions": {
+        "Length1": {
+          "mean": 18.73,
+          "min": 13.5,
+          "max": 24.0,
+          "std": 3.28
+        },
+        "Length2": {
+          "mean": 20.35,
+          "min": 14.7,
+          "max": 26.0,
+          "std": 3.56
+        },
+        "Length3": {
+          "mean": 22.79,
+          "min": 16.5,
+          "max": 29.0,
+          "std": 3.96
+        },
+        "Height": {
+          "mean": 8.96,
+          "min": 6.58,
+          "max": 11.37,
+          "std": 1.62
+        },
+        "Width": {
+          "mean": 3.22,
+          "min": 2.31,
+          "max": 4.23,
+          "std": 0.64
+        }
+      }
+    },
+    "Perch": {
+      "count": 56,
+      "weight": {
+        "mean": 382.24,
+        "median": 207.5,
+        "min": 5.9,
+        "max": 1100.0,
+        "std": 347.62
+      },
+      "dimensions": {
+        "Length1": {
+          "mean": 25.74,
+          "min": 7.5,
+          "max": 41.1,
+          "std": 8.56
+        },
+        "Length2": {
+          "mean": 27.89,
+          "min": 8.4,
+          "max": 44.0,
+          "std": 9.02
+        },
+        "Length3": {
+          "mean": 29.57,
+          "min": 8.8,
+          "max": 46.6,
+          "std": 9.53
+        },
+        "Height": {
+          "mean": 7.86,
+          "min": 2.11,
+          "max": 12.8,
+          "std": 2.88
+        },
+        "Width": {
+          "mean": 4.75,
+          "min": 1.41,
+          "max": 8.14,
+          "std": 1.77
+        }
+      }
+    },
+    "Pike": {
+      "count": 17,
+      "weight": {
+        "mean": 718.71,
+        "median": 510.0,
+        "min": 200.0,
+        "max": 1650.0,
+        "std": 494.14
+      },
+      "dimensions": {
+        "Length1": {
+          "mean": 42.48,
+          "min": 30.0,
+          "max": 59.0,
+          "std": 9.03
+        },
+        "Length2": {
+          "mean": 45.48,
+          "min": 32.3,
+          "max": 63.4,
+          "std": 9.71
+        },
+        "Length3": {
+          "mean": 48.72,
+          "min": 34.8,
+          "max": 68.0,
+          "std": 10.17
+        },
+        "Height": {
+          "mean": 7.71,
+          "min": 5.57,
+          "max": 10.81,
+          "std": 1.66
+        },
+        "Width": {
+          "mean": 5.09,
+          "min": 3.38,
+          "max": 7.48,
+          "std": 1.14
+        }
+      }
+    },
+    "Roach": {
+      "count": 19,
+      "weight": {
+        "mean": 160.05,
+        "median": 150.0,
+        "min": 40.0,
+        "max": 390.0,
+        "std": 83.53
+      },
+      "dimensions": {
+        "Length1": {
+          "mean": 20.73,
+          "min": 12.9,
+          "max": 29.5,
+          "std": 3.53
+        },
+        "Length2": {
+          "mean": 22.37,
+          "min": 14.1,
+          "max": 31.7,
+          "std": 3.73
+        },
+        "Length3": {
+          "mean": 25.08,
+          "min": 16.2,
+          "max": 35.0,
+          "std": 4.11
+        },
+        "Height": {
+          "mean": 6.71,
+          "min": 4.15,
+          "max": 9.48,
+          "std": 1.29
+        },
+        "Width": {
+          "mean": 3.67,
+          "min": 2.27,
+          "max": 5.36,
+          "std": 0.71
+        }
+      }
+    },
+    "Smelt": {
+      "count": 14,
+      "weight": {
+        "mean": 11.18,
+        "median": 9.85,
+        "min": 6.7,
+        "max": 19.9,
+        "std": 4.13
+      },
+      "dimensions": {
+        "Length1": {
+          "mean": 11.26,
+          "min": 9.3,
+          "max": 13.8,
+          "std": 1.22
+        },
+        "Length2": {
+          "mean": 11.92,
+          "min": 9.8,
+          "max": 15.0,
+          "std": 1.43
+        },
+        "Length3": {
+          "mean": 13.04,
+          "min": 10.8,
+          "max": 16.2,
+          "std": 1.43
+        },
+        "Height": {
+          "mean": 2.21,
+          "min": 1.73,
+          "max": 2.93,
+          "std": 0.35
+        },
+        "Width": {
+          "mean": 1.34,
+          "min": 1.05,
+          "max": 2.07,
+          "std": 0.29
+        }
+      }
+    },
+    "Whitefish": {
+      "count": 6,
+      "weight": {
+        "mean": 531.0,
+        "median": 423.0,
+        "min": 270.0,
+        "max": 1000.0,
+        "std": 309.6
+      },
+      "dimensions": {
+        "Length1": {
+          "mean": 28.8,
+          "min": 23.6,
+          "max": 37.3,
+          "std": 5.58
+        },
+        "Length2": {
+          "mean": 31.32,
+          "min": 26.0,
+          "max": 40.0,
+          "std": 5.72
+        },
+        "Length3": {
+          "mean": 34.32,
+          "min": 28.7,
+          "max": 43.5,
+          "std": 6.02
+        },
+        "Height": {
+          "mean": 10.03,
+          "min": 8.15,
+          "max": 12.35,
+          "std": 1.83
+        },
+        "Width": {
+          "mean": 5.47,
+          "min": 4.25,
+          "max": 6.57,
+          "std": 1.19
+        }
+      }
+    }
+  },
+  "correlation_matrix": {
+    "Weight": {
+      "Weight": 1.0,
+      "Length1": 0.9157,
+      "Length2": 0.9186,
+      "Length3": 0.9231,
+      "Height": 0.7239,
+      "Width": 0.8867
+    },
+    "Length1": {
+      "Weight": 0.9157,
+      "Length1": 1.0,
+      "Length2": 0.9995,
+      "Length3": 0.992,
+      "Height": 0.6244,
+      "Width": 0.8667
+    },
+    "Length2": {
+      "Weight": 0.9186,
+      "Length1": 0.9995,
+      "Length2": 1.0,
+      "Length3": 0.9941,
+      "Height": 0.6395,
+      "Width": 0.8732
+    },
+    "Length3": {
+      "Weight": 0.9231,
+      "Length1": 0.992,
+      "Length2": 0.9941,
+      "Length3": 1.0,
+      "Height": 0.7027,
+      "Width": 0.8782
+    },
+    "Height": {
+      "Weight": 0.7239,
+      "Length1": 0.6244,
+      "Length2": 0.6395,
+      "Length3": 0.7027,
+      "Height": 1.0,
+      "Width": 0.7924
+    },
+    "Width": {
+      "Weight": 0.8867,
+      "Length1": 0.8667,
+      "Length2": 0.8732,
+      "Length3": 0.8782,
+      "Height": 0.7924,
+      "Width": 1.0
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "model_name": "Multiple Linear Regression",
+  "algorithm": "Ordinary Least Squares (OLS)",
+  "library": "scikit-learn LinearRegression",
+  "dataset_source": "YBI Foundation Fish Dataset (https://github.com/YBI-Foundation/Dataset)",
+  "random_state": 42,
+  "test_size": 0.2,
+  "train_samples": 126,
+  "test_samples": 32,
+  "features": [
+    "Length1",
+    "Length2",
+    "Length3",
+    "Height",
+    "Width",
+    "Species_Bream",
+    "Species_Parkki",
+    "Species_Perch",
+    "Species_Pike",
+    "Species_Roach",
+    "Species_Smelt",
+    "Species_Whitefish"
+  ],
+  "dimension_features": [
+    "Length1",
+    "Length2",
+    "Length3",
+    "Height",
+    "Width"
+  ],
+  "species_order": [
+    "Bream",
+    "Parkki",
+    "Perch",
+    "Pike",
+    "Roach",
+    "Smelt",
+    "Whitefish"
+  ],
+  "intercept": -770.14348,
+  "coefficients": {
+    "Length1": -63.22929,
+    "Length2": 65.949601,
+    "Length3": 32.630849,
+    "Height": -13.48771,
+    "Width": 14.767237,
+    "Species_Bream": -23.7579,
+    "Species_Parkki": 109.676725,
+    "Species_Perch": 14.629984,
+    "Species_Pike": -386.381168,
+    "Species_Roach": -14.93777,
+    "Species_Smelt": 289.503048,
+    "Species_Whitefish": 11.267081
+  },
+  "evaluation": {
+    "test": {
+      "r2_score": 0.9497,
+      "adjusted_r2": 0.918,
+      "mae_grams": 63.23,
+      "rmse_grams": 82.15
+    },
+    "train": {
+      "r2_score": 0.929,
+      "mae_grams": 69.89,
+      "rmse_grams": 94.08
+    },
+    "cross_validation_5fold": {
+      "mean_r2": 0.8939,
+      "std_r2": 0.0771,
+      "fold_scores": [
+        0.9407,
+        0.923,
+        0.9146,
+        0.7416,
+        0.9495
+      ]
+    }
+  },
+  "test_samples_predictions": [
+    {
+      "actual": 300.0,
+      "predicted": 299.26,
+      "residual": 0.74
+    },
+    {
+      "actual": 140.0,
+      "predicted": 147.5,
+      "residual": -7.5
+    },
+    {
+      "actual": 510.0,
+      "predicted": 575.66,
+      "residual": -65.66
+    },
+    {
+      "actual": 19.7,
+      "predicted": 115.58,
+      "residual": -95.88
+    },
+    {
+      "actual": 130.0,
+      "predicted": 189.82,
+      "residual": -59.82
+    },
+    {
+      "actual": 1000.0,
+      "predicted": 759.95,
+      "residual": 240.05
+    },
+    {
+      "actual": 145.0,
+      "predicted": 238.82,
+      "residual": -93.82
+    },
+    {
+      "actual": 180.0,
+      "predicted": 271.21,
+      "residual": -91.21
+    },
+    {
+      "actual": 225.0,
+      "predicted": 224.93,
+      "residual": 0.07
+    },
+    {
+      "actual": 1250.0,
+      "predicted": 1155.81,
+      "residual": 94.19
+    },
+    {
+      "actual": 650.0,
+      "predicted": 607.48,
+      "residual": 42.52
+    },
+    {
+      "actual": 306.0,
+      "predicted": 424.81,
+      "residual": -118.81
+    },
+    {
+      "actual": 600.0,
+      "predicted": 545.59,
+      "residual": 54.41
+    },
+    {
+      "actual": 273.0,
+      "predicted": 359.31,
+      "residual": -86.31
+    },
+    {
+      "actual": 700.0,
+      "predicted": 682.36,
+      "residual": 17.64
+    },
+    {
+      "actual": 920.0,
+      "predicted": 821.0,
+      "residual": 99.0
+    },
+    {
+      "actual": 1100.0,
+      "predicted": 932.55,
+      "residual": 167.45
+    },
+    {
+      "actual": 556.0,
+      "predicted": 643.43,
+      "residual": -87.43
+    },
+    {
+      "actual": 150.0,
+      "predicted": 216.13,
+      "residual": -66.13
+    },
+    {
+      "actual": 140.0,
+      "predicted": 193.87,
+      "residual": -53.87
+    },
+    {
+      "actual": 10.0,
+      "predicted": -0.36,
+      "residual": 10.36
+    },
+    {
+      "actual": 610.0,
+      "predicted": 586.13,
+      "residual": 23.87
+    },
+    {
+      "actual": 500.0,
+      "predicted": 510.22,
+      "residual": -10.22
+    },
+    {
+      "actual": 500.0,
+      "predicted": 491.31,
+      "residual": 8.69
+    },
+    {
+      "actual": 955.0,
+      "predicted": 816.89,
+      "residual": 138.11
+    },
+    {
+      "actual": 110.0,
+      "predicted": 137.98,
+      "residual": -27.98
+    },
+    {
+      "actual": 290.0,
+      "predicted": 311.6,
+      "residual": -21.6
+    },
+    {
+      "actual": 950.0,
+      "predicted": 967.79,
+      "residual": -17.79
+    },
+    {
+      "actual": 1000.0,
+      "predicted": 1022.73,
+      "residual": -22.73
+    },
+    {
+      "actual": 7.0,
+      "predicted": -48.03,
+      "residual": 55.03
+    },
+    {
+      "actual": 7.5,
+      "predicted": -51.41,
+      "residual": 58.91
+    },
+    {
+      "actual": 70.0,
+      "predicted": -15.46,
+      "residual": 85.46
+    }
+  ]
+}
