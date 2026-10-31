@@ -1,0 +1,8 @@
+{
+  "name": "Fish Weight Prediction & ML Lab",
+  "description": "Interactive machine learning application to predict fish weight using Multiple Linear Regression, Polynomial models, and morphometric analysis on the Fish Market dataset.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ],
+  "permissions": []
+}
