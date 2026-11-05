@@ -58,13 +58,19 @@ export const RegressionPlots: React.FC<RegressionPlotsProps> = ({
       ? currentInput.height
       : currentInput.width;
 
-  const currentPoint = [
-    {
-      x: currentX,
-      y: currentPrediction.predictedWeightGrams,
-      species: currentInput.species,
-    },
-  ];
+  const hasValidPrediction =
+    currentPrediction.isPhysicallyMeaningful &&
+    currentPrediction.predictedWeightGrams !== null;
+
+  const currentPoint = hasValidPrediction
+    ? [
+        {
+          x: currentX,
+          y: currentPrediction.predictedWeightGrams,
+          species: currentInput.species,
+        },
+      ]
+    : [];
 
   // Test Set Predictions for Actual vs Predicted Plot
   const testSetData = MODEL_METADATA.test_samples_predictions.map((p, idx) => ({
@@ -171,13 +177,15 @@ export const RegressionPlots: React.FC<RegressionPlotsProps> = ({
                 fill="#38bdf8"
                 opacity={0.65}
               />
-              {/* Current User Input Point */}
-              <Scatter
-                name="Current Prediction"
-                data={currentPoint}
-                fill="#f43f5e"
-                shape="cross"
-              />
+              {/* Current User Input Point (rendered if physically meaningful) */}
+              {hasValidPrediction && (
+                <Scatter
+                  name="Current Prediction"
+                  data={currentPoint}
+                  fill="#f43f5e"
+                  shape="cross"
+                />
+              )}
             </ScatterChart>
           </ResponsiveContainer>
         </div>
@@ -190,7 +198,12 @@ export const RegressionPlots: React.FC<RegressionPlotsProps> = ({
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-sm bg-rose-500 inline-block"></span>
-              <span>Current calculation ({currentPrediction.predictedWeightGrams.toFixed(1)}g)</span>
+              <span>
+                Current calculation:{' '}
+                {hasValidPrediction && currentPrediction.predictedWeightGrams !== null
+                  ? `${currentPrediction.predictedWeightGrams.toFixed(1)} g`
+                  : 'Non-physical estimate (excluded)'}
+              </span>
             </span>
           </div>
           <span>Target Metric: Weight (grams)</span>
@@ -205,7 +218,7 @@ export const RegressionPlots: React.FC<RegressionPlotsProps> = ({
               Actual vs Predicted Weight (Holdout Test Set)
             </h3>
             <p className="text-[11px] text-slate-400">
-              Evaluated on 32 test specimens (R² = 0.9497). Points closer to the diagonal indicate higher accuracy.
+              Evaluated on 32 test specimens (R² = 0.9497). Points closer to the diagonal indicate closer agreement between actual and predicted values.
             </p>
           </div>
           <span className="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">

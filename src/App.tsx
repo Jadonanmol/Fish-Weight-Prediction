@@ -7,20 +7,24 @@ import { FishAnatomyVisualizer } from './components/FishAnatomyVisualizer';
 import { RegressionPlots } from './components/RegressionPlots';
 import { ResidualAnalysis } from './components/ResidualAnalysis';
 import { DatasetExplorer } from './components/DatasetExplorer';
+import { BatchPredictor } from './components/BatchPredictor';
 import { Footer } from './components/Footer';
 import { Morphometrics } from './types/fish';
 import { calculateFishWeight, getSpeciesDefaults } from './utils/predictor';
+import { User, Users } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<
     'predictor' | 'regression' | 'residuals' | 'dataset'
   >('predictor');
 
+  const [predictionMode, setPredictionMode] = useState<'single' | 'batch'>('single');
+
   const [morphometrics, setMorphometrics] = useState<Morphometrics>(() =>
     getSpeciesDefaults('Bream')
   );
 
-  // Compute prediction synchronously using verified ML model equation
+  // Compute prediction synchronously using verified ML model equation and range validation
   const prediction = useMemo(
     () => calculateFishWeight(morphometrics),
     [morphometrics]
@@ -32,6 +36,7 @@ export default function App() {
 
   const handleLoadSpecimen = (loadedMorphometrics: Morphometrics) => {
     setMorphometrics(loadedMorphometrics);
+    setPredictionMode('single');
     setActiveTab('predictor');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -63,32 +68,81 @@ export default function App() {
           </div>
         </div>
 
-        {/* Tab 1: Interactive Predictor & Anatomy */}
+        {/* Tab 1: Predictor Workspace (Single Fish vs Batch Mode) */}
         {activeTab === 'predictor' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            {/* Left Column: Morphometric Form Controls (5 columns on desktop) */}
-            <div className="lg:col-span-5 space-y-6">
-              <MorphometricForm
-                values={morphometrics}
-                onChange={setMorphometrics}
-                onReset={handleReset}
-              />
+          <div className="space-y-6">
+            {/* Mode Switcher: Single Fish vs Batch Prediction */}
+            <div className="flex items-center justify-between flex-wrap gap-3 pb-1">
+              <div className="flex items-center gap-1 p-1 bg-slate-900/80 border border-slate-800 rounded-lg">
+                <button
+                  type="button"
+                  onClick={() => setPredictionMode('single')}
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-md transition-all ${
+                    predictionMode === 'single'
+                      ? 'bg-cyan-950 text-cyan-300 border border-cyan-700 shadow-sm'
+                      : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  <User className="w-3.5 h-3.5" />
+                  <span>Single Fish Prediction</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPredictionMode('batch')}
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-md transition-all ${
+                    predictionMode === 'batch'
+                      ? 'bg-cyan-950 text-cyan-300 border border-cyan-700 shadow-sm'
+                      : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  <Users className="w-3.5 h-3.5" />
+                  <span>Batch Prediction Mode</span>
+                </button>
+              </div>
+
+              <div className="text-xs text-slate-400 font-mono">
+                {predictionMode === 'single' ? (
+                  <span>Interactive visual anatomy &amp; single specimen testing</span>
+                ) : (
+                  <span>Multi-specimen entry, batch validation &amp; CSV export</span>
+                )}
+              </div>
             </div>
 
-            {/* Right Column: Visualization, Prediction & Model Evaluation (7 columns on desktop) */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* Dynamic SVG Fish Anatomy Visualization */}
-              <FishAnatomyVisualizer morphometrics={morphometrics} />
+            {/* Single Fish Mode */}
+            {predictionMode === 'single' ? (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                {/* Left Column: Morphometric Form Controls (5 cols) */}
+                <div className="lg:col-span-5 space-y-6">
+                  <MorphometricForm
+                    values={morphometrics}
+                    onChange={setMorphometrics}
+                    onReset={handleReset}
+                  />
+                </div>
 
-              {/* Weight Prediction Output */}
-              <PredictionCard
-                prediction={prediction}
-                inputs={morphometrics}
-              />
+                {/* Right Column: Visualization, Prediction & Model Evaluation (7 cols) */}
+                <div className="lg:col-span-7 space-y-6">
+                  {/* Dynamic SVG Fish Anatomy Visualization */}
+                  <FishAnatomyVisualizer morphometrics={morphometrics} />
 
-              {/* Separated Model Performance & Metrics Card */}
-              <ModelMetricsCard />
-            </div>
+                  {/* Weight Prediction Output with Validation Alerts */}
+                  <PredictionCard
+                    prediction={prediction}
+                    inputs={morphometrics}
+                  />
+
+                  {/* Separated Model Performance & Metrics Card */}
+                  <ModelMetricsCard />
+                </div>
+              </div>
+            ) : (
+              /* Batch Prediction Mode */
+              <div className="space-y-6">
+                <BatchPredictor />
+                <ModelMetricsCard />
+              </div>
+            )}
           </div>
         )}
 

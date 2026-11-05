@@ -214,14 +214,17 @@ Open your browser to **`http://localhost:3000`** to interact with the laboratory
 
 ## Web Application Features
 
-1. **Interactive Morphometric Sliders**: Fine-grained sliders for vertical, diagonal, and cross lengths, body height, and width with biological range indicators.
-2. **Species Presets**: One-click selection for *Bream, Parkki, Perch, Pike, Roach, Smelt, Whitefish*, with instant reset to the species' empirical average dimensions.
-3. **Dynamic Scaled SVG Anatomy**: Real-time biological silhouette that scales its length, height, and width alongside measurement callouts ($L_1, L_2, L_3, H, W$).
-4. **Immediate Weight Prediction**: Tabular display in grams ($g$), kilograms ($kg$), and ounces ($oz$) with comparison against the species median.
-5. **Separated Model Evaluation Display**: Clear presentation of test $R^2$, Adjusted $R^2$, Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the complete mathematical regression equation.
-6. **Regression Visualizer**: Interactive scatter chart with regression trendlines, species filtering, and current prediction crosshair marker.
-7. **Residual Diagnostics**: Residual vs. Fitted value scatter plot and error distribution histogram.
-8. **Dataset Explorer**: Searchable, sortable table of all 158 cleaned YBI Foundation records, with a **"Load"** button to inject any specimen directly into the predictor.
+1. **Interactive Morphometric Controls**: Precise inputs for vertical, diagonal, and cross lengths, body height, and width with individual species-specific training range validation.
+2. **Input Validation & Extrapolation Detection**: Flags measurements that fall outside the minimum or maximum observed in the YBI Foundation training dataset without silently clamping or resetting user entries.
+3. **Non-Physical Prediction Safeguard**: Identifies and clearly explains when extreme extrapolations yield negative regression outputs, explaining that physical mass must be positive rather than silently converting to 0 g.
+4. **Batch Prediction Mode**: Switch between Single Fish and Batch Prediction modes. Add, edit, and remove multiple fish specimens across different species in a single workflow.
+5. **Batch Results & Metrics Summary**: Displays total entered specimens, successfully predicted fish, extrapolation warning count, total weight ($g$ and $kg$), average weight, min, and max weights (strictly calculated from valid positive predictions).
+6. **CSV Export & Prediction History**: Direct one-click CSV export of batch predictions and lightweight `localStorage`-backed history to restore past batches across sessions.
+7. **Dynamic Scaled SVG Anatomy**: Real-time biological silhouette that scales its length, height, and width alongside measurement callouts ($L_1, L_2, L_3, H, W$).
+8. **Separated Model Evaluation Display**: Clear presentation of test $R^2$, Adjusted $R^2$, Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the complete mathematical regression equation.
+9. **Regression Visualizer**: Interactive scatter chart with regression trendlines, species filtering, and current prediction crosshair marker.
+10. **Residual Diagnostics**: Residual vs. Fitted value scatter plot and error distribution histogram.
+11. **Dataset Explorer**: Searchable, sortable table of all 158 cleaned YBI Foundation records, with a **"Load"** button to inject any specimen directly into the predictor.
 
 ***
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AlertTriangle } from 'lucide-react';
 import { Morphometrics } from '../types/fish';
 
 interface FishAnatomyVisualizerProps {
@@ -10,12 +11,16 @@ export const FishAnatomyVisualizer: React.FC<FishAnatomyVisualizerProps> = ({
 }) => {
   const { species, length1, length2, length3, height, width } = morphometrics;
 
+  const hasAnatomicalMismatch =
+    (length1 > 0 && length2 > 0 && length1 > length2) ||
+    (length2 > 0 && length3 > 0 && length2 > length3);
+
   // Scale normalized coordinates based on dimensions
   // Length3 is the longest length (max ~ 70 cm), Height is ~ 20 cm
-  const l3Clamped = Math.max(10, Math.min(65, length3));
-  const l2Clamped = Math.max(8, Math.min(l3Clamped - 1, length2));
-  const l1Clamped = Math.max(6, Math.min(l2Clamped - 1, length1));
-  const hClamped = Math.max(2, Math.min(22, height));
+  const l3Clamped = Math.max(10, Math.min(65, length3 || 10));
+  const l2Clamped = Math.max(8, Math.min(l3Clamped - 1, length2 || 8));
+  const l1Clamped = Math.max(6, Math.min(l2Clamped - 1, length1 || 6));
+  const hClamped = Math.max(2, Math.min(22, height || 2));
 
   // Canvas bounds
   const svgWidth = 640;
@@ -65,6 +70,12 @@ export const FishAnatomyVisualizer: React.FC<FishAnatomyVisualizerProps> = ({
       </div>
 
       <div className="relative w-full aspect-[21/9] bg-slate-950/90 rounded-xl border border-slate-800/80 overflow-hidden flex items-center justify-center p-2">
+        {hasAnatomicalMismatch && (
+          <div className="absolute top-3 left-3 z-10 flex items-center gap-2 px-3 py-1.5 bg-amber-950/90 border border-amber-500/60 rounded-lg text-xs text-amber-200 font-mono shadow-lg backdrop-blur-md">
+            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>Anatomical Inconsistency: Length1 &le; Length2 &le; Length3 expected</span>
+          </div>
+        )}
         <svg
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
           className="w-full h-full max-h-64"
